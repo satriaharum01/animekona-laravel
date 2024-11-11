@@ -92,13 +92,13 @@
               <div class="col-lg order-lg-first">
                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                   <li class="nav-item">
-                    <a href="./index.html" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+                    <a href="{{route('admin.dashboard')}}" class="nav-link {{ (request()->is('admin/dashboard')) ? 'active' : '' }}"><i class="fe fe-home"></i> Home</a>
                   </li>
                   <li class="nav-item">
                     <a href="#" class="nav-link"><i class="fe fe-users"></i> User</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a href="{{route('admin.anime')}}" class="nav-link"><i class="fe fe-film"></i> Anime</a>
+                    <a href="{{route('admin.anime')}}" class="nav-link {{ (request()->is('admin/anime')) ? 'active' : '' }} {{ (request()->is('admin/anime/*')) ? 'active' : '' }}"><i class="fe fe-film"></i> Anime</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a href="#" class="nav-link"><i class="fe fe-video"></i> Episode</a>

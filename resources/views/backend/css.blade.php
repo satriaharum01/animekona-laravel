@@ -21,3 +21,10 @@
     <script src="{{asset('assets/plugins/maps-google/plugin.js')}}"></script>
     <!-- Input Mask Plugin -->
     <script src="{{asset('assets/plugins/input-mask/plugin.js')}}"></script>
+    <style>
+        .cover__anime{
+            max-height: 320px;
+            width: 100%;
+            height: 100%;
+        }
+    </style>

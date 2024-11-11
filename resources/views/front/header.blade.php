@@ -3,8 +3,8 @@
     <header class="header">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2">
-                    <div class="header__logo">
+                <div class="align-self-center col-lg-2">
+                    <div class="">
                         <a href="{{url('/')}}">
                             <img src="{{asset('assets/img/logo.png')}}" alt="">
                         </a>
