@@ -9,77 +9,39 @@
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title">{{$sub_title}}</h3>
-                    <div class="card-options">
-                      <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                      <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                    <div class="card-options align-items-center">
+                      <button class="btn btn-primary"><i class="fa fa-plus"></i> New Anime</button>
+                      <a href="#" class="card-options-collapse btn btn-outline-primary" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
                     </div>
                   </div>
                   <div class="card-body">
-                    <form class="row" method="POST" enctype="multipart/form-data">  
-                      <div class="col-md-6 col-lg-3">
-                        <div class="form-group">
-                          <label class="form-label">Cover</label>
-                          <img src="{{asset('assets/img/default.jpg')}}" alt="Anime Cover" class="cover__anime">
-                          <input type="file" class="form-control" placeholder="Upload Cover">
-                          <div class="p-2"><i class="fa fa-eye"></i> Views : 1 view</div>
+                    <div class="row">  
+                      @foreach($animes as $anime)
+                      <div class="col-6 col-md-4 col-lg-2 custom-col">
+                        <div class="form-group ">
+                          <div class="image-container my-2">
+                            <img src="{{asset('assets/img/anime/').'/'.$anime->cover}}" alt="Anime Cover">
+                            <div class="overlay">
+                              <div class="title">{{$anime->title}}</div>
+                            </div>
+                          </div>
+                          <div class="text-center">
+                            <button class="btn btn-success btn-edit"><i class="fa fa-edit"></i> Edit</button>
+                            <button class="btn btn-danger btn-hapus"><i class="fa fa-trash"></i> Hapus</button>
+                            <div class="p-2"><i class="fa fa-eye"></i> Views : 1</div>
+                          </div>
                         </div>
                       </div>
-                      <div class="col-md-6 col-lg-3">
-                        <div class="form-group">
-                          <label class="form-label">Title</label>
-                          <textarea class="form-control" name="title" cols="30" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Original Title</label>
-                          <textarea class="form-control" name="original_title" cols="30" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Description</label>
-                          <textarea class="form-control" name="description" cols="30" rows="3"></textarea>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <div class="form-group">
-                          <label class="form-label">Type</label>
-                          <input type="text" class="form-control" name="type" />
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Studio</label>
-                          <input type="text" class="form-control" name="studio" />
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Aired</label>
-                          <input type="date" class="form-control" name="date_aired" />
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Status</label>
-                          <select class="form-control" name="status">
-                            <option value="">-- Pilih Status</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <div class="form-group">
-                          <label class="form-label">MyAnimelist Score</label>
-                          <input type="text" class="form-control" name="score" />
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Rating</label>
-                          <input type="text" class="form-control" name="rating" />
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Episode Duration</label>
-                          <input type="text" class="form-control" name="duration" />
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Movie Quality</label>
-                          <input type="text" class="form-control" name="quality" />
-                        </div>
-                      </div>
-                    </form>
+                      @endforeach
+                    </div>
                   </div>
-                  <div class="card-footer">
-                     {{env('APP_NAME')}} - {{$title}}
+                  <div class="card-footer d-flex justify-content-between">
+                      <div>
+                        {{env('APP_NAME')}} - {{$title}}
+                      </div>
+                      <div class="d-flex justify-content-center">
+                          {{ $animes->links('pagination::bootstrap-4') }}
+                      </div>
                   </div>
                 </div>
             </div>

@@ -7,31 +7,27 @@
                 <div class="col-6 col-md-3">
                   <ul class="list-unstyled mb-0">
                     <li><a href="#">First link</a></li>
+                  </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                  <ul class="list-unstyled mb-0">
                     <li><a href="#">Second link</a></li>
                   </ul>
                 </div>
                 <div class="col-6 col-md-3">
                   <ul class="list-unstyled mb-0">
                     <li><a href="#">Third link</a></li>
+                  </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                  <ul class="list-unstyled mb-0">
                     <li><a href="#">Fourth link</a></li>
-                  </ul>
-                </div>
-                <div class="col-6 col-md-3">
-                  <ul class="list-unstyled mb-0">
-                    <li><a href="#">Fifth link</a></li>
-                    <li><a href="#">Sixth link</a></li>
-                  </ul>
-                </div>
-                <div class="col-6 col-md-3">
-                  <ul class="list-unstyled mb-0">
-                    <li><a href="#">Other link</a></li>
-                    <li><a href="#">Last link</a></li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="col-lg-4 mt-4 mt-lg-0">
-              Premium and Open Source dashboard template with responsive and high quality UI. For Free!
+              All Access Managed By Super Admin
             </div>
           </div>
         </div>
@@ -54,7 +50,7 @@
               </div>
             </div>
             <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
-              Copyright © 2018 <a href=".">Tabler</a>. Theme by <a href="https://codecalm.net" target="_blank">codecalm.net</a> All rights reserved.
+              Copyright © 2018 <a href=".">{{env('APP_NAME')}}</a>. Developed by <a href="#" target="_blank">Harumi Project</a> All rights reserved.
             </div>
           </div>
         </div>
