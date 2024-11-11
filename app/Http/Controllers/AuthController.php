@@ -6,33 +6,38 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+//Call Models
+use App\Models\User;
 
 class AuthController extends Controller
 {
+    public function index()
+    {
+        $this->data['title'] = 'Login';
+
+        return view('front/login', $this->data);
+    }
+
     public function login(Request $request)
     {
-        $credentials = $request->validate([
+        $request->validate([
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
         ]);
 
+        $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-
             // Mengambil data user
-            $user = Auth::user();
-            return response()->json([
-                'message' => 'Login successful',
-                'type' => 'alert-success',
-                'user' => [
-                    'id' => $user->id,
-                    'username' => $user->name, // atau sesuaikan field `username`
-                    'email' => $user->email
-                ]
-            ]);
+            $rows = User::find(Auth::user()->id);
+            $level = strtolower($rows->level);
+            $rows->update([
+                'last_login' => now()
+             ]);
+            return redirect()->intended('/'.$level.'/dashboard')
+                        ->withSuccess('Signed in');
         }
 
-        return response()->json(['message' => 'Email atau Password Salah !','type' => 'alert-danger',], 401);
+        return redirect(route('account.login'))->withErrors(['alertMessage' => 'Email atau Password Salah','alertType' => 'alert-danger']);
     }
 
     public function logout(Request $request)
