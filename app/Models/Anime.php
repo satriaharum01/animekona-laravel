@@ -12,6 +12,7 @@ class Anime extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
         'cover',
+        'trailer',
         'title',
         'original_title ',
         'description ',

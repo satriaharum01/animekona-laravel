@@ -1,26 +1,13 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
-    <script src="{{asset('assets/js/require.min.js')}}"></script>
-    <script>
-      requirejs.config({
-          baseUrl: '.'
-      });
-    </script>
     <!-- Dashboard Core -->
     <script>
         const basePath = "{{asset('assets/js/') }}";
     </script>
+    <link  rel="stylesheet"  href="{{asset('assets/css/datatables.min.css')}}"/>
     <link href="{{asset('assets/css/dashboard.css')}}" rel="stylesheet" />
-    <script src="{{asset('assets/js/dashboard.js')}}"></script>
-    <!-- c3.js Charts Plugin -->
-    <link href="{{asset('assets/plugins/charts-c3/plugin.css')}}" rel="stylesheet" />
-    <script src="{{asset('assets/plugins/charts-c3/plugin.js')}}"></script>
-    <!-- Google Maps Plugin -->
-    <link href="{{asset('assets/plugins/maps-google/plugin.css')}}" rel="stylesheet" />
-    <script src="{{asset('assets/plugins/maps-google/plugin.js')}}"></script>
-    <!-- Input Mask Plugin -->
-    <script src="{{asset('assets/plugins/input-mask/plugin.js')}}"></script>
+    
     <style>
         .custom-col {
             flex: 0 0 20%;
@@ -42,6 +29,28 @@
             max-height: 320px;
             width: 100%;
             height: auto;
+        }
+        
+        .image-container:hover .overlay-full {
+          opacity: 1;
+        }
+        
+        .overlay-full {
+            position: absolute;
+            opacity:0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Optional dark overlay */
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: 0.5s;
         }
 
         .overlay {
@@ -66,6 +75,10 @@
             font-size: 14px;
         }
 
+        .overlay .btn {
+            font-weight: bold;
+            font-size: auto;
+        }
         .overlay .date {
             font-size: 12px;
             margin-bottom: 5px;

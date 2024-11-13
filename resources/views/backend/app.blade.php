@@ -26,6 +26,7 @@
       </div>
       
       @include('backend.footer')
+      @yield('js')
     </div>
   </body>
 </html>

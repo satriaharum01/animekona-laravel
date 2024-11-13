@@ -9,18 +9,14 @@
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title">{{$sub_title}}</h3>
-                    <div class="card-options">
-                      <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                      <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-                    </div>
                   </div>
                   <div class="card-body">
                     <form class="row" method="POST" enctype="multipart/form-data">  
                       <div class="col-md-6 col-lg-3">
                         <div class="form-group">
                           <label class="form-label">Cover</label>
-                          <img src="{{asset('assets/img/default.jpg')}}" alt="Anime Cover" class="cover__anime">
-                          <input type="file" class="form-control" placeholder="Upload Cover">
+                          <img src="{{ asset('assets/img/' . ($anime->cover ?? 'default.jpg')) }}" alt="Anime Cover" class="cover__anime">
+                          <input type="file" class="form-control" accept="image/png, image/gif, image/jpeg" placeholder="Upload Cover">
                           <div class="p-2"><i class="fa fa-eye"></i> Views : 1 view</div>
                         </div>
                       </div>

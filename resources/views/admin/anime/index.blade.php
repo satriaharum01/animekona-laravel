@@ -10,7 +10,7 @@
                   <div class="card-header">
                     <h3 class="card-title">{{$sub_title}}</h3>
                     <div class="card-options align-items-center">
-                      <button class="btn btn-primary"><i class="fa fa-plus"></i> New Anime</button>
+                      <button class="btn btn-primary btn-add"><i class="fa fa-plus"></i> New Anime</button>
                       <a href="#" class="card-options-collapse btn btn-outline-primary" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
                     </div>
                   </div>
@@ -21,6 +21,9 @@
                         <div class="form-group ">
                           <div class="image-container my-2">
                             <img src="{{asset('assets/img/anime/').'/'.$anime->cover}}" alt="Anime Cover">
+                            <div class="overlay-full">
+                              <div class="btn btn-primary rounded-circle btn-eye" data-id="{{$anime->id}}"><i class="fa fa-eye"></i></div>
+                            </div>
                             <div class="overlay">
                               <div class="title">{{$anime->title}}</div>
                             </div>
@@ -48,4 +51,17 @@
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+<script>
+  
+  $("body").on("click", ".btn-add", function () {
+    window.location.href = "{{route('admin.anime.new')}}";
+  })
+
+  $("body").on("click", ".btn-eye", function () {
+    var id = jQuery(this).attr("data-id");
+    window.location.href = "{{url('admin/anime/show')}}/"+id;
+  })
+</script>
 @endsection

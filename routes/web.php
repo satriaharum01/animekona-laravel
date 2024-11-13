@@ -22,4 +22,7 @@ Route::get('/', [App\Http\Controllers\FrontController::class, 'index']);
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\AdminDashboardController::class, 'index'])->name('dashboard');
     Route::get('/anime', [App\Http\Controllers\AdminAnimeController::class, 'index'])->name('anime');
+    Route::get('/anime/show/{id}', [App\Http\Controllers\AdminAnimeController::class, 'show'])->name('anime.show');
+    Route::get('/anime/new', [App\Http\Controllers\AdminAnimeController::class, 'new'])->name('anime.new');
+    Route::get('/anime/show/{id}/json', [App\Http\Controllers\AdminAnimeController::class, 'json']);
 });

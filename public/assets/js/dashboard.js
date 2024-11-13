@@ -11,7 +11,7 @@ shim: {
 },
 paths: {
 'core': `${basePath}/core`,
-'jquery': `${basePath}/vendors/jquery-3.2.1.min`,
+'jquery': `${basePath}/jquery-3.7.0.min`,
 'bootstrap': `${basePath}/vendors/bootstrap.bundle.min`,
 'sparkline': `${basePath}/vendors/jquery.sparkline.min`,
 'selectize': `${basePath}/vendors/selectize.min`,
