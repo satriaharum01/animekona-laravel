@@ -25,4 +25,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/anime/show/{id}', [App\Http\Controllers\AdminAnimeController::class, 'show'])->name('anime.show');
     Route::get('/anime/new', [App\Http\Controllers\AdminAnimeController::class, 'new'])->name('anime.new');
     Route::get('/anime/show/{id}/json', [App\Http\Controllers\AdminAnimeController::class, 'json']);
+    Route::get('/episode', [App\Http\Controllers\AdminEpisodeController::class, 'index'])->name('episode');
+    Route::get('/episode/new', [App\Http\Controllers\AdminEpisodeController::class, 'new'])->name('episode.new');
+    Route::get('/episode/json', [App\Http\Controllers\AdminEpisodeController::class, 'json']);
 });

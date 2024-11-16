@@ -57,6 +57,7 @@
     </footer>
     <script src="{{asset('assets/js/jquery-3.7.0.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
     <!-- Data table plugin-->
     <script type="text/javascript" src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>
     <!-- Custom Script -->

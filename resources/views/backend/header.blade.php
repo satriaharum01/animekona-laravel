@@ -101,13 +101,13 @@
                     <a href="{{route('admin.anime')}}" class="nav-link {{ (request()->is('admin/anime')) ? 'active' : '' }} {{ (request()->is('admin/anime/*')) ? 'active' : '' }}"><i class="fe fe-film"></i> Anime</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a href="#" class="nav-link"><i class="fe fe-video"></i> Episode</a>
+                    <a href="{{route('admin.episode')}}" class="nav-link {{ (request()->is('admin/episode')) ? 'active' : '' }} {{ (request()->is('admin/episode/*')) ? 'active' : '' }}"><i class="fe fe-video"></i> Episode</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a href="#" class="nav-link"><i class="fa fa-commenting"></i> Komentar</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fa fa-bullhorn"></i> Berita & Blog</a>
+                    <a href="#" class="nav-link" data-toggle="dropdown"><i class="fa fa-bullhorn"></i> Berita & Blog</a>
                     <div class="dropdown-menu dropdown-menu-arrow">
                       <a href="#" class="dropdown-item ">Berita</a>
                       <a href="#" class="dropdown-item ">Blog</a>
